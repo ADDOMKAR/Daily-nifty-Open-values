@@ -1,10 +1,9 @@
-# .github/workflows/daily-run.yml
 name: Run Daily Script
 
 on:
   schedule:
     - cron: '0 4 * * *'  # Runs daily at 9:08 AM IST (04:00 UTC)
-  workflow_dispatch:     # Allows manual run
+  workflow_dispatch:      # Allows manual run too
 
 jobs:
   build:
