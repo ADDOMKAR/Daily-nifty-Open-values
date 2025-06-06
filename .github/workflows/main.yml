@@ -3,20 +3,22 @@ name: Run Daily Script
 on:
   schedule:
     - cron: '0 4 * * *'  # Runs daily at 9:08 AM IST (04:00 UTC)
-  workflow_dispatch:      # Allows manual run too
+  workflow_dispatch:
 
 jobs:
   build:
     runs-on: ubuntu-latest
-
     steps:
-    - name: Checkout repo
-      uses: actions/checkout@v3
+      - name: Checkout repo
+        uses: actions/checkout@v3
 
-    - name: Set up Python
-      uses: actions/setup-python@v4
-      with:
-        python-version: '3.11'
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
 
-    - name: Run the script
-      run: python Niftyopenvalues2.py
+      - name: Install dependencies
+        run: pip install pandas yfinance requests
+
+      - name: Run the script
+        run: python Niftyopenvalues2.py
