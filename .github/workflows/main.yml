@@ -2,7 +2,7 @@ name: Run Daily Script
 
 on:
   schedule:
-    - cron: '0 4 * * *'  # Runs daily at 9:08 AM IST (04:00 UTC)
+    - cron: '38 3 * * *'  # Runs daily at 9:08 AM IST (03:38 UTC)
   workflow_dispatch:
 
 jobs:
